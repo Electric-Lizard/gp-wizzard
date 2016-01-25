@@ -2,7 +2,7 @@ import _ from 'ramda'
 
 
 const findPageNum = ($) =>
-$.find('.pagesection .pagelinks').eq(0).children('.navPages')
+$.find('.pagesection .pagelinks').eq(0).children('.navPages, strong')
   .filter((_, v) => isFinite(parseFloat(v.innerHTML)))
   .last()
   .text()
