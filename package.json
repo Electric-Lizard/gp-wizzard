@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "browserify src/index.js -t [ babelify ] | uglifyjs > ./dist/gp-wizzard.min.js",
+    "build": "browserify src/index.js -t [ babelify ] | uglifyjs | npm run monkey",
+    "monkey": "cat ./src/monkey-header.js - > ./dist/gp-wizzard.min.js",
     "build:d": "browserify src/index.js -t [ babelify ] -d > ./dist/gp-wizzard.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
