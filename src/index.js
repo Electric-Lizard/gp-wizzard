@@ -2,7 +2,7 @@ import findNewPosts from './gear/find-new-posts'
 import appendNewPosts from './gear/append-new-posts'
 
 import request from 'superagent'
-//import _ from 'ramda'
+import _ from 'ramda'
 import $ from 'jquery'
 
 
@@ -13,6 +13,8 @@ const loc = window.location.href
 window.jQuery = $
 window.fetch = () =>
   findNewPosts(request, parser, $, loc)
-    //.then(_.tap(console.log.bind(console)))
+    .then(_.tap(() => console.log('I\'m not dead')))
     .then(appendNewPosts($))
     .catch(e => setTimeout(() => {throw e}))
+
+setInterval(window.fetch, 5000)
