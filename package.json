@@ -1,0 +1,35 @@
+{
+  "name": "gp-wizzard",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "browserify src/index.js -t [ babelify ] | uglifyjs > ./dist/gp-wizzard.min.js",
+    "build:d": "browserify src/index.js -t [ babelify ] -d > ./dist/gp-wizzard.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^2.1.4",
+    "ramda": "^0.19.1",
+    "superagent": "^1.7.1"
+  },
+  "devDependencies": {
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.1.18",
+    "babel-preset-stage-0": "^6.1.18",
+    "babelify": "^7.2.0",
+    "browserify": "^13.0.0",
+    "gulp": "^3.9.0",
+    "shelljs": "^0.5.3",
+    "uglify-js": "^2.6.1",
+    "webpack": "^1.12.8"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-0"
+    ]
+  }
+}
