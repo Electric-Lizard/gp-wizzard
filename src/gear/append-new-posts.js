@@ -12,12 +12,15 @@ const delimiterStyle = {
 
 const delimiter = ($) => $('<div>').css(delimiterStyle)
 
-const appendNewPosts = _.curry(($, x) =>
-                                 x.length === 0 ?
-                                   null :
-                                   $('#forumposts form')
-                                     .append(delimiter($))
-                                     .append(x)
-                              )
+const appendNewPosts = _.curry(
+  ($, x) => {
+    if(x.length > 0)
+      $('#forumposts form')
+        .append(delimiter($))
+        .append(x)
+
+    return x
+  }
+)
 
 export default appendNewPosts

@@ -31,7 +31,8 @@ const refreshPagination = _.curry(($, dom) => {
         v.style.color = '#03A9F4'
       }
     })
-  }
+    return true
+  } else return false
 })
 
 export default refreshPagination
